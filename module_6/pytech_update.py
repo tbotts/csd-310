@@ -30,17 +30,17 @@ print("\n  -- DISPLAYING STUDENTS DOCUMENTS FROM find() QUERY --")
 for doc in student_list:
     print("  Student ID: " + doc["student_id"] + "\n  First Name: " + doc["first_name"] + "\n  Last Name: " + doc["last_name"] + "\n")
 
-# update student_id 1007
+# Update student_id 1007
 result = students.update_one({"student_id": "1007"}, {"$set": {"last_name": "Marvel"}})
 
-# find the updated student document 
+# Find the updated student document 
 Captain = students.find_one({"student_id": "1007"})
 
-# display message
+# Display message
 print("\n  -- DISPLAYING STUDENT DOCUMENT 1007 --")
 
-# output the updated document to the terminal window
+# Output the updated document to the terminal window
 print("  Student ID: " + Captain["student_id"] + "\n  First Name: " + Captain["first_name"] + "\n  Last Name: " + Captain["last_name"] + "\n")
 
-# exit message 
+# Exit message 
 input("\n\n  End of program, press any key to continue...")
