@@ -1,3 +1,9 @@
+# Title: mongodb_test.py
+# Author: Tara Botts
+# Date: August 29, 2021
+# Description: Assignment 5.2
+
+# Import statements
 from pymongo import MongoClient 
 import certifi
 
