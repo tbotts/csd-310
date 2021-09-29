@@ -12,33 +12,18 @@ CREATE USER 'whatabook_user'@'localhost' IDENTIFIED WITH mysql_native_password B
 GRANT ALL PRIVILEGES ON whatabook.* TO'whatabook_user'@'localhost';
 
 /*
-    Create table(s)
+    Create tables
 */
-CREATE TABLE store (
-    store_id    INT             NOT NULL    AUTO_INCREMENT,
-    locale      VARCHAR(500)    NOT NULL,
-    PRIMARY KEY(store_id)
+CREATE TABLE store (store_id INT NOT NULL AUTO_INCREMENT, locale VARCHAR(500) NOT NULL, hour VARCHAR(50) NOT NULL, PRIMARY KEY(store_id)
 );
 
-CREATE TABLE book (
-    book_id     INT             NOT NULL    AUTO_INCREMENT,
-    book_name   VARCHAR(200)    NOT NULL,
-    author      VARCHAR(200)    NOT NULL,
-    details     VARCHAR(500),
-    PRIMARY KEY(book_id)
+CREATE TABLE book (book_id INT NOT NULL AUTO_INCREMENT, book_name VARCHAR(200) NOT NULL, author VARCHAR(200) NOT NULL, details VARCHAR(500), PRIMARY KEY(book_id)
 );
 
-CREATE TABLE user (
-    user_id         INT         NOT NULL    AUTO_INCREMENT,
-    first_name      VARCHAR(75) NOT NULL,
-    last_name       VARCHAR(75) NOT NULL,
-    PRIMARY KEY(user_id) 
+CREATE TABLE user (user_id INT NOT NULL AUTO_INCREMENT, first_name VARCHAR(75) NOT NULL, last_name VARCHAR(75) NOT NULL, PRIMARY KEY(user_id) 
 );
 
-CREATE TABLE wishlist (
-    wishlist_id     INT         NOT NULL    AUTO_INCREMENT,
-    user_id         INT         NOT NULL,
-    book_id         INT         NOT NULL,
+CREATE TABLE wishlist (wishlist_id INT NOT NULL AUTO_INCREMENT, user_id INT NOT NULL, book_id INT NOT NULL,
     PRIMARY KEY (wishlist_id),
     CONSTRAINT fk_book
     FOREIGN KEY (book_id)
@@ -51,8 +36,8 @@ CREATE TABLE wishlist (
 /*
     insert store record 
 */
-INSERT INTO store(locale)
-    VALUES('123 Main St., Disney, FL 34647');
+INSERT INTO store(locale, hour)
+    VALUES('123 Main St., Disney, FL 34647', '9:00AM to 9:00PM');
 
 /*
     insert book records 
@@ -85,7 +70,7 @@ INSERT INTO book(book_id, book_name, details, author)
     VALUES('9', 'Night', 'Published 1960', 'Elie Wiesel');
 
 /*
-    insert user
+    insert users
 */ 
 INSERT INTO user(user_id, first_name, last_name) 
     VALUES('1', 'Bradley', 'Davis');
