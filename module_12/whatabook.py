@@ -21,7 +21,7 @@ def show_menu():
     print("\nMAIN MENU")
 
     print("     1. View Books\n     2. View Store Locations\n     3. My Account\n     4. Exit Program")
-
+    import sys
     try:
         choice = int(input('\nPlease Enter Selection: '))
 
@@ -60,7 +60,7 @@ def show_locations(_cursor):
 #Validation of user ID
 def validate_user():
     """ validate the users ID """
-
+    import sys
     try:
         user_id = int(input('\nEnter User ID Number: '))
 
@@ -77,7 +77,7 @@ def validate_user():
 #My user account menu formatting
 def show_account_menu():
     """ display the users account menu """
-
+    import sys
     try:
         print("\nMY ACCOUNT MENU")
         print("\n     1. Wishlist\n     2. Add Book\n     3. Main Menu")
